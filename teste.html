@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baixar NEXT PLAY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #f72585;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .download-btn {
+      background: #7209b7;
+      color: #fff;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #f72585;
+      transition: all 0.3s ease;
+    }
+    .download-btn:hover {
+      background: #560bad;
+      transform: scale(1.05);
+    }
+    .counter {
+      margin-top: 2rem;
+      font-size: 1rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>📲 NEXT PLAY</h1>
+  <p>Assista canais, filmes e séries direto do seu celular com qualidade e estabilidade.</p>
+  <a href="NEXT-PLAY.apk" download onclick="incrementCounter()">
+    <button class="download-btn">Baixar Agora</button>
+  </a>
+  <div class="counter">Downloads: <span id="clickCount">0</span></div>
+
+  <script>
+    function incrementCounter() {
+      let count = localStorage.getItem('clickCount') || 0;
+      count++;
+      localStorage.setItem('clickCount', count);
+      document.getElementById('clickCount').innerText = count;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const count = localStorage.getItem('clickCount') || 0;
+      document.getElementById('clickCount').innerText = count;
+    });
+  </script>
+</body>
+</html>
